@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import { Route, Routes } from 'react-router-dom'
+import SharkAttack from './Pages/SharkAttack.jsx'
+import Home from './Pages/Home.jsx'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [sharkAttacks, setsharkAttacks] = useState([])
+
+
+    useEffect(() => {
+        const getAttacked = async () => {
+            const response = await axios.get('https://manse99sharkattack-production.up.railway.app/api/sharkattack')
+            setsharkAttacks(response.data)
+            
+        }
+        getAttacked()
+    }, [])
+
+    console.log(sharkAttacks)
+
+    return (
+        <div className="App">
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/shark' element={<SharkAttack sharkAttacks={sharkAttacks} />} />
+            </Routes>
+        </div>
+    )
 }
 
-export default App;
+export default App
