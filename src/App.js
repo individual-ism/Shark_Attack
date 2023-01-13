@@ -19,10 +19,9 @@ function App() {
         getAttacked()
     }, [])
 
-    console.log(sharkAttacks)
-
     return (
         <div className="App">
+            <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel:wght@600;700&family=Nosifer&family=UnifrakturCook&family=UnifrakturMaguntia&display=swap" rel="stylesheet"></link>
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/shark' element={<SharkAttack sharkAttacks={sharkAttacks} />} />

@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.homePageTitle {
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 150px;
+    color: navy;
+    text-shadow: 4px 4px white;
+}
+
+.saButton {
+    font-family: 'Nosifer', cursive;
+    text-decoration: none;
+    font-size: 50px;
+    color: maroon;
+}
+

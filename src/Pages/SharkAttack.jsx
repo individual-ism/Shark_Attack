@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import '../Style/SharkAttack.css'
 
 function SharkAttack({sharkAttacks}) {
 
     const [index, setIndex] = useState(0)
+
+    if (!sharkAttacks.length) return <h1 className="loading">Loading...</h1>
 
     function showSharkAttack(index) {
         setIndex(index)
@@ -14,37 +17,86 @@ function SharkAttack({sharkAttacks}) {
     return (
         <div className='sharkAttacksPage'>
             <div className="clickHere">
-                <button onClick={() => showSharkAttack(0)} className="sharking">{sharkAttacks[0].fields.location}</button>
-                <button onClick={() => showSharkAttack(1)} className="sharking">{sharkAttacks[1].fields.location}</button>
-                <button onClick={() => showSharkAttack(2)} className="sharking">{sharkAttacks[2].fields.location}</button>
-                <button onClick={() => showSharkAttack(3)} className="sharking">{sharkAttacks[3].fields.location}</button>
-                <button onClick={() => showSharkAttack(4)} className="sharking">{sharkAttacks[4].fields.location}</button>
-                <button onClick={() => showSharkAttack(5)} className="sharking">{sharkAttacks[5].fields.location}</button>
-                <button onClick={() => showSharkAttack(6)} className="sharking">{sharkAttacks[6].fields.location}</button>
-                <button onClick={() => showSharkAttack(7)} className="sharking">{sharkAttacks[7].fields.location}</button>
-                <button onClick={() => showSharkAttack(8)} className="sharking">{sharkAttacks[8].fields.location}</button>
-                <button onClick={() => showSharkAttack(9)} className="sharking">{sharkAttacks[9].fields.location}</button>
+                {sharkAttacks.map((sharkattack, index) => {
+                    return (
+                        <button onClick={() => showSharkAttack(index)} className="sharking">{sharkAttacks[index].fields.location}</button>
+                    )
+                })}
             </div>
-            <div className='sharkBody'>
-                <h2>Location: {shark.fields.location}</h2>
-                <p>ID: {shark._id}</p>
-                <p>Activity: {shark.fields.activity}</p>
-                <p>Victim Name: {shark.fields.name}</p>
-                <p>Victim Age: {shark.fields.age}</p>
-                <p>Victim Sex: {shark.fields.sex}</p>
-                <p>Year: {shark.fields.year}</p>
-                <p>Date: {shark.fields.date}</p>
-                <p>Time: {shark.fields.time}</p>
-                <p>Country: {shark.fields.country}</p>
-                <p>Area: {shark.fields.area}</p>
-                <p>Type: {shark.fields.type}</p>
-                <p>Species: {shark.fields.species}</p>
-                <p>Fatal: {shark.fields.fatal_y_n}</p>
-                <p>Injury: {shark.fields.injury}</p>
-                <p>Case Number: {shark.fields.case_number}</p>
-                <p>Dataset ID: {shark.datasetid}</p>
-                <p>Record ID: {shark.recordid}</p>
-            </div>
+
+            <table className='sharkBody'>
+                <tbody>
+                <tr>
+                    <th className='keys'>ID</th>
+                    <td className='values'>{shark._id}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Activity</th>
+                    <td className='values'>{shark.fields.activity}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Victim Name</th>
+                    <td className='values'>{shark.fields.name}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Victim Age</th>
+                    <td className='values'>{shark.fields.age}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Victim Sex</th>
+                    <td className='values'>{shark.fields.sex}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Year</th>
+                    <td className='values'>{shark.fields.year}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Date</th>
+                    <td className='values'>{shark.fields.date}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Time</th>
+                    <td className='values'>{shark.fields.time}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Country</th>
+                    <td className='values'>{shark.fields.country}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Area</th>
+                    <td className='values'>{shark.fields.area}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Type</th>
+                    <td className='values'>{shark.fields.type}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Species</th>
+                    <td className='values'>{shark.fields.species}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Fatal</th>
+                    <td className='values'>{shark.fields.fatal_y_n}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Injury</th>
+                    <td className='values'>{shark.fields.injury}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Case Number</th>
+                    <td className='values'>{shark.fields.case_number}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Database ID</th>
+                    <td className='values'>{shark.datasetid}</td>
+                </tr>
+                <tr>
+                    <th className='keys'>Record ID</th>
+                    <td className='values'>{shark.recordid}</td>
+                </tr>
+                </tbody>
+            </table>
+
             <Link to='/' className='goHome'>Home</Link>
         </div>
     )
