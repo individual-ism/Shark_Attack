@@ -30,3 +30,13 @@ body {
     text-shadow: 2px 2px black;
     color:#800020;
 }
+
+.sharkAttacksListed {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.create-form, .edit-form {
+    display: flex;
+    flex-direction: column;
+}

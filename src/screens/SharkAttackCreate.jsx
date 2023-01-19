@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createSharkAttack } from '../services/sharkAttacks'
+import '../App.css'
 
 export default function SharkAttackCreate() {
 
