@@ -18,10 +18,10 @@ export default function SharkAttacks() {
     if (!sharkAttacks.length) return <h1 className="loading">Loading...</h1>
 
     return (
-        <div>
+        <div className='allSharkAttacks'>
             <h1 className='sharkAttacksHeading'>All Shark Attacks</h1>
             <div className='sharkAttacksListed'>
-                {sharkAttacks.map((sharkAttack) => (<SharkAttack sharkAttack={sharkAttack} key={sharkAttack._id} />))}
+                {sharkAttacks.map((sharkAttack) => (<SharkAttack className="sharkinglisting" sharkAttack={sharkAttack} key={sharkAttack._id} />))}
             </div>
         </div>
     )

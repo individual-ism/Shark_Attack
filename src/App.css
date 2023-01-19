@@ -1,8 +1,16 @@
 body {
-    background-image: url('https://www.australiangeographic.com.au/wp-content/uploads/2021/06/megalodon-fact-from-fiction-scaled.jpg');
+    background: url('https://www.australiangeographic.com.au/wp-content/uploads/2021/06/megalodon-fact-from-fiction-scaled.jpg') no-repeat center center fixed;
     background-position: center;
     background-size: cover;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+button {
+    background-color: aquamarine;
+    font-family: 'Nosifer', cursive;
 }
 
 .sharkHeading {
@@ -22,21 +30,66 @@ body {
 .homePageTitle {
     font-family: 'UnifrakturMaguntia', cursive;
     font-size: 150px;
-    color: navy;
-    text-shadow: 4px 4px white;
+    color: #03065F;
+    text-shadow: 4px 4px #800020;
 }
 
 .sharkAttacksHeading {
     text-shadow: 2px 2px black;
     color:#800020;
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 50px;
 }
 
 .sharkAttacksListed {
     display: flex;
     flex-direction: column-reverse;
+    text-decoration: none;
+    color: white;
+    border-width: 4px;
+    border: 4px groove darkgray;
+    background-color: rgba(155, 155, 155, 0.5);
+    font-family: 'Cinzel Decorative', cursive;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.allSharkAttacks {
+    margin: 0px 0px 50px 0px;
+}
+
+input.placeholder {
+    font-family: 'Cinzel', serif;
 }
 
 .create-form, .edit-form {
     display: flex;
     flex-direction: column;
+}
+
+.sharklisting {
+    text-decoration: none;
+    color: white;
+}
+
+.navlink {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    text-shadow: 0.5px 0.5px white;
+    padding: 2px;
+    margin: 0px 20px;
+    background-color: #800020;
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: bold;
+
+}
+
+.navlink:active, .navlink:hover {
+    background-color: blue;
+}
+
+.navLinkCollection {
+    background-color: #800020;
+    padding: 2px;
 }

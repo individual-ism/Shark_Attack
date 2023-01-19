@@ -11,7 +11,11 @@ function App() {
 
 
     return (
+        
         <div className="App">
+            <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel:wght@600;700&family=Nosifer&family=UnifrakturCook&family=UnifrakturMaguntia&display=swap');
+</style>
             <Nav />
             <Routes>
                 <Route path='/' element={<Home />} />

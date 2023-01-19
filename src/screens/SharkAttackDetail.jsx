@@ -28,7 +28,7 @@ export default function SharkAttackDetail() {
 
     return (
         <div>
-            <h1 className='sharkHeading'>{sharkAttack._id}</h1>
+            <h1 className='sharkHeading'>{sharkAttack.fields.location}</h1>
             <table className='sharkBody'>
                 <tbody>
                 <tr>
