@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createSharkAttack } from '../services/sharkAttacks'
 import '../App.css'
@@ -53,63 +53,63 @@ export default function SharkAttackCreate() {
     }
     
 
-    // const [sharkAttack, setSharkAttack] = useState({
-    //     fields: {
-    //         activity: "",
-    //         name: "",
-    //         age: "",
-    //         sex: "",
-    //         year: "",
-    //         date: "",
-    //         time: "",
-    //         country: "",
-    //         area: "",
-    //         type: "",
-    //         species: "",
-    //         fatal_y_n: "N",
-    //         injury: "",
-    //         case_number: "",
-    //     },
-    //     datasetid: "",
-    //     recordid: ""
-    // })
+//     const [sharkAttack, setSharkAttack] = useState({
+//         fields: {
+//             activity: "",
+//             name: "",
+//             age: "",
+//             sex: "",
+//             year: "",
+//             date: "",
+//             time: "",
+//             country: "",
+//             area: "",
+//             type: "",
+//             species: "",
+//             fatal_y_n: "N",
+//             injury: "",
+//             case_number: "",
+//         },
+//         datasetid: "",
+//         recordid: ""
+//     })
 
     
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault()
-    //     let finalSharkAttack = {
-    //         fields: {
-    //             activity: sharkAttack.activity,
-    //             name: sharkAttack.name,
-    //             age: sharkAttack.age,
-    //             sex: sharkAttack.sex,
-    //             year: sharkAttack.year,
-    //             date: sharkAttack.date,
-    //             time: sharkAttack.time,
-    //             country: sharkAttack.country,
-    //             area: "",
-    //             type: "",
-    //             species: "",
-    //             fatal_y_n: "N",
-    //             injury: "",
-    //             case_number: "",
-    //         },
-    //         datasetid: "",
-    //         recordid: ""
-    //     }
-    //     const response = await createSharkAttack(finalSharkAttack)
-    //     navigate(`/sharkattacks/${response._id}`, { replace: true })
-    // }
+//     const handleSubmit = async (e) => {
+//         e.preventDefault()
+//         let finalSharkAttack = {
+//             fields: {
+//                 activity: sharkAttack.activity,
+//                 name: sharkAttack.name,
+//                 age: sharkAttack.age,
+//                 sex: sharkAttack.sex,
+//                 year: sharkAttack.year,
+//                 date: sharkAttack.date,
+//                 time: sharkAttack.time,
+//                 country: sharkAttack.country,
+//                 area: sharkAttack.area,
+//                 type: sharkAttack.type,
+//                 species: sharkAttack.species,
+//                 fatal_y_n: sharkAttack.fatal_y_n,
+//                 injury: sharkAttack.injury,
+//                 case_number: sharkAttack.case_number,
+//             },
+//             datasetid: sharkAttack.datasetid,
+//             recordid: sharkAttack.recordid
+//         }
+//         const response = await createSharkAttack(finalSharkAttack)
+//         navigate(`/sharkattacks/${response._id}`, { replace: true })
+//     }
 
-    // const handleChange = (e) => {
-    //     const { value, name } = e.target
+//     const handleChange = (e) => {
+//         const { value, name } = e.target
 
-    //     setSharkAttack((prev) => ({
-    //         ...prev,
-    //         [name]: value
-    //     }))
-    // }
+//         setSharkAttack((prev) => ({
+//             ...prev,
+//             [name]: value
+//         }))
+//     }
 
 
 
