@@ -4,6 +4,7 @@ import { createSharkAttack } from '../services/sharkAttacks'
 
 export default function SharkAttackCreate() {
 
+    const locRef = useRef()
     const actRef = useRef()
     const nameRef = useRef()
     const ageRef = useRef()
@@ -27,6 +28,7 @@ export default function SharkAttackCreate() {
         e.preventDefault()
         let finalSharkAttack = {
             fields: {
+                location: locRef.current.value,
                 activity: actRef.current.value,
                 name: nameRef.current.value,
                 age: ageRef.current.value,
@@ -142,6 +144,7 @@ return (
     <div>
         <h1>Add Shark Attack Record</h1>
         <form className="create-form" onSubmit={handleSubmit}>
+            <input type="text" placeholder="location" name="location" ref={locRef}/>
             <input type="text" placeholder="activity" name="activity" ref={actRef}/>
             <input type="text" placeholder="name" ref={nameRef} name="name" />
             <input type="text" placeholder="age" name="age" ref={ageRef}/>

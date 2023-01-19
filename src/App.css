@@ -1,6 +1,32 @@
 body {
-    /* background-image: url('https://www.australiangeographic.com.au/wp-content/uploads/2021/06/megalodon-fact-from-fiction-scaled.jpg'); */
+    background-image: url('https://www.australiangeographic.com.au/wp-content/uploads/2021/06/megalodon-fact-from-fiction-scaled.jpg');
     background-position: center;
     background-size: cover;
     display: flex;
+}
+
+.sharkHeading {
+    color: Black;
+    text-shadow: 2px 2px #800020;
+}
+
+.sharkBody {
+    border-color: #800020;
+    border-width: 4px;
+    border: 4px groove darkgray;
+    background-color: rgba(155, 155, 155, 0.5);
+    text-align: center;
+    margin: 0px 0px 100px 0px;
+}
+
+.homePageTitle {
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 150px;
+    color: navy;
+    text-shadow: 4px 4px white;
+}
+
+.sharkAttacksHeading {
+    text-shadow: 2px 2px black;
+    color:#800020;
 }

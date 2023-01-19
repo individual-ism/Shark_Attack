@@ -1,6 +1,7 @@
 import { getSharkAttacks } from '../services/sharkAttacks.js'
 import { useState, useEffect } from 'react'
 import SharkAttack from '../components/SharkAttack.jsx'
+import '../App.css'
 
 export default function SharkAttacks() {
     const [sharkAttacks, setSharkAttacks] = useState([])
@@ -18,8 +19,8 @@ export default function SharkAttacks() {
 
     return (
         <div>
-            <h1>All Shark Attacks</h1>
-            <div>
+            <h1 className='sharkAttacksHeading'>All Shark Attacks</h1>
+            <div className='sharkAttacksListed'>
                 {sharkAttacks.map((sharkAttack) => (<SharkAttack sharkAttack={sharkAttack} key={sharkAttack._id} />))}
             </div>
         </div>

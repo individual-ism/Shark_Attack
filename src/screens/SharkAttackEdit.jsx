@@ -4,6 +4,7 @@ import { updateSharkAttack, getSharkAttack } from '../services/sharkAttacks'
 
 export default function SharkAttackEdit() {
 
+    const locRef = useRef()
     const actRef = useRef()
     const nameRef = useRef()
     const ageRef = useRef()
@@ -21,12 +22,14 @@ export default function SharkAttackEdit() {
     const dataRef = useRef()
     const recRef = useRef()
 
+    let { id } = useParams()
     let navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         let finalSharkAttack = {
             fields: {
+                location: locRef.current.value,
                 activity: actRef.current.value,
                 name: nameRef.current.value,
                 age: ageRef.current.value,
@@ -45,7 +48,7 @@ export default function SharkAttackEdit() {
             datasetid: dataRef.current.value,
             recordid: recRef.current.value
         }
-        const response = await updateSharkAttack(finalSharkAttack)
+        const response = await updateSharkAttack(id, finalSharkAttack)
         console.log(response)
         navigate(`/sharkattacks/${response._id}`, { replace: true })
     }
@@ -127,21 +130,22 @@ export default function SharkAttackEdit() {
         <div>
             <h1>Update Shark Attack Record</h1>
             <form className="edit-form" onSubmit={handleSubmit}>
+                <input type="text" placeholder="location" name="location" ref={locRef}/>
                 <input type="text" placeholder="activity" name="activity" ref={actRef}/>
                 <input type="text" placeholder="name" ref={nameRef} name="name" />
                 <input type="text" placeholder="age" name="age" ref={ageRef}/>
                 <input type="text" placeholder="sex" name="sex" ref={sexRef}/>
-                <input type="text" placeholder="year"  name="year" ref={yearRef}/>
-                <input type="text" placeholder="date"  name="date" ref={dateRef}/>
-                <input type="text" placeholder="time"  name="time" ref={timeRef}/>
-                <input type="text" placeholder="country"  name="country" ref={countryRef}/>
-                <input type="text" placeholder="area"  name="area" ref={areaRef}/>
-                <input type="text" placeholder="type"  name="type" ref={typeRef}/>
-                <input type="text" placeholder="species"  name="species" ref={speciesRef}/>
+                <input type="text" placeholder="year" name="year" ref={yearRef}/>
+                <input type="text" placeholder="date" name="date" ref={dateRef}/>
+                <input type="text" placeholder="time" name="time" ref={timeRef}/>
+                <input type="text" placeholder="country" name="country" ref={countryRef}/>
+                <input type="text" placeholder="area" name="area" ref={areaRef}/>
+                <input type="text" placeholder="type" name="type" ref={typeRef}/>
+                <input type="text" placeholder="species" name="species" ref={speciesRef}/>
                 <input type="text" placeholder="fatal_y_n" name="fatal_y_n" ref={fatalRef}/>
                 <input type="text" placeholder="injury" name="injury" ref={injuryRef}/>
                 <input type="text" placeholder="case_number" name="case_number" ref={caseRef}/>
-                <input type="text" placeholder="datasetid"  name="datasetid" ref={dataRef}/>
+                <input type="text" placeholder="datasetid" name="datasetid" ref={dataRef}/>
                 <input type="text" placeholder="recordid" name="recordid" ref={recRef}/>
                 <button type="submit">Update Record</button>
             </form>

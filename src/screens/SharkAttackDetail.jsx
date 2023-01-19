@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getSharkAttack, deleteSharkAttack } from '../services/sharkAttacks.js'
 import { Link, useParams, useNavigate } from 'react-router-dom'
+import '../App.css'
 
 export default function SharkAttackDetail() {
     
@@ -20,14 +21,14 @@ export default function SharkAttackDetail() {
 
     async function handleDelete() {
         await deleteSharkAttack(id)
-        navigate("/sharkattacks")
+        navigate("/sharkattacks", { replace: true })
     }
 
     if (!sharkAttack.fields) return <h1>Loading...</h1>
 
     return (
         <div>
-            <h2>{sharkAttack._id}</h2>
+            <h1 className='sharkHeading'>{sharkAttack._id}</h1>
             <table className='sharkBody'>
                 <tbody>
                 <tr>
