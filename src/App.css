@@ -93,3 +93,11 @@ input.placeholder {
     background-color: #800020;
     padding: 2px;
 }
+
+.keys {
+    text-align: left;
+}
+
+.values {
+    text-align: right;
+}
